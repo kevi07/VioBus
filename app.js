@@ -9,5 +9,8 @@ app.use(express.static('public'));
 app.get('/',(req,res)=> {
     res.render('index');
 })
-
+ 
+app.get('/login',(req,res) => {
+    res.render('login')
+})
 app.listen(5000);
