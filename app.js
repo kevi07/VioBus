@@ -13,4 +13,8 @@ app.get('/',(req,res)=> {
 app.get('/login',(req,res) => {
     res.render('login')
 })
+
+app.get('/driverrole',(req,res) =>{
+    res.render('driverrole')
+})
 app.listen(5000);
