@@ -9,9 +9,20 @@
     <title>VioBus || Driver</title>
 </head>
 <body>
+    <style>
+      form {
+        position: relative;
+      }
 
+      .submit {
+        position: absolute;
+        bottom: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
     <section class="section1">
-        <nav class="navigation" id="navbar">
+        <nav class="navigation z-70" id="navbar">
             <ul>
                 <li>Home</li>
                 <li>About</li>
@@ -23,22 +34,23 @@
         <div class="styleborder"></div>
     </section>
     <div style="width: 100%;height: 50px;"></div>
-    <section class="section3">
-        <div class="sec3-div">
-            <img src="/image/bus1.jpeg" alt="">
-        </div>
-        <div class="sec3-content">
-            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">BECOME ONE OF US!</h1>
-            <p class="mb-6 text-lg font-normal text-black-500 lg:text-xl sm:px-16 xl:px-48 dark:text-black-400">Add with the network of <span>3500</span> bus operators worldwide</p>
-            <p class="mb-6 text-lg font-normal text-white-500 lg:text-xl sm:px-16 xl:px-48 dark:text-white-400">Earn more</p>
-            <p class="mb-6 text-lg font-normal text-black-500 lg:text-xl sm:px-16 xl:px-48 dark:text-black-400">Value Customers</p>
-            <p class="mb-6 text-lg font-normal text-white-500 lg:text-xl sm:px-16 xl:px-48 dark:text-white-400">Quality of Service</p>
-            <p class="mb-6 text-lg font-normal text-white-500 lg:text-xl sm:px-16 xl:px-48 dark:text-white-400">Instant Payment</p>
 
-        </div>
+    <section class="section3 z-1 relative">
+      <div class="z-20 sec3-div">
+        <img src="/image/bus1.jpeg" alt="">
+      </div>
+      <div class="z-20 sec3-content opacity-0">
+        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">BECOME ONE OF US!</h1>
+        <p class="mb-6 text-lg font-normal text-black-500 lg:text-xl sm:px-16 xl:px-48 dark:text-black-400"><span>&#11162;</span>  Add with the network of <span>3500</span> bus operators worldwide</p>
+        <p class="mb-6 text-lg font-normal text-white-500 lg:text-xl sm:px-16 xl:px-48 dark:text-white-400"><span>&#11162;</span>  Earn more</p>
+        <p class="mb-6 text-lg font-normal text-black-500 lg:text-xl sm:px-16 xl:px-48 dark:text-black-400"><span>&#11162;</span>  Value Customers</p>
+        <p class="mb-6 text-lg font-normal text-white-500 lg:text-xl sm:px-16 xl:px-48 dark:text-white-400"><span>&#11162;</span>  Quality of Service</p>
+        <p class="mb-6 text-lg font-normal text-white-500 lg:text-xl sm:px-16 xl:px-48 dark:text-white-400"><span>&#11162;</span>  Instant Payment</p>
+      </div>
     </section> <br><br>
-    <section class="section2"> 
-        <form>
+    <section class="section2">
+
+        <form method="POST" action="/driverrole" enctype="multipart/form-data">
             <div class="space-y-12">
               <div class="border-b border-gray-900/10 pb-12">
                 <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
@@ -48,7 +60,7 @@
                     <div class="sm:col-span-3">
                         <label  class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                         <div class="mt-2">
-                          <input type="text"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" >
+                          <input type="text" name="name"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                         </div>
                       </div>    
               
@@ -64,7 +76,7 @@
                   <div class="col-span-full">
                     <label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
                     <div class="mt-2">
-                      <textarea id="about" name="about" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                      <textarea id="about" name="about" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required></textarea>
                     </div>
                     <p class="mt-3 text-sm leading-6 text-gray-600">Write about the Bus..</p>
                   </div>
@@ -89,7 +101,7 @@
                         <div class="mt-4 flex text-sm leading-6 text-gray-600">
                           <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                             <span>Upload a file</span>
-                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                            <input id="file-upload" name="file_upload" type="file" class="sr-only" required>
                           </label>
                           <p class="pl-1">or drag and drop</p>
                         </div>
@@ -108,28 +120,28 @@
                   <div class="sm:col-span-3">
                     <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
                     <div class="mt-2">
-                      <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" name="first_name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
           
                   <div class="sm:col-span-3">
                     <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
                     <div class="mt-2">
-                      <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" name="last_name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" >
                     </div>
                   </div>
           
                   <div class="sm:col-span-4">
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                     <div class="mt-2">
-                      <input type="email" id="email" name="email"  autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="email" id="email" name="email"  autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
           
                   <div class="sm:col-span-3">
                     <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
                     <div class="mt-2">
-                      <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" required>
                         <option>India</option>
                         <option>United States</option>
                         <option>Bangladesh</option>
@@ -141,40 +153,40 @@
                   <div class="col-span-full">
                     <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street address</label>
                     <div class="mt-2">
-                      <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" name="street" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
           
                   <div class="sm:col-span-2 sm:col-start-1">
                     <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City</label>
                     <div class="mt-2">
-                      <input type="text" name="city" id="city" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" name="city" id="city" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
           
                   <div class="sm:col-span-2">
                     <label for="region" class="block text-sm font-medium leading-6 text-gray-900">State</label>
                     <div class="mt-2">
-                      <input type="text" name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
           
                   <div class="sm:col-span-2">
-                    <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">PIN code</label>
+                    <label for="pincode" class="block text-sm font-medium leading-6 text-gray-900">PIN code</label>
                     <div class="mt-2">
-                      <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" name="pincode" id="pincode" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
                   <div class="sm:col-span-4">
                     <label for="pan" class="block text-sm font-medium leading-6 text-gray-900">PAN Number</label>
                     <div class="mt-2">
-                      <input type="text" id="pan" name="pan"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" id="pan" name="pan"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
                   <div class="sm:col-span-4">
                     <label for="pan" class="block text-sm font-medium leading-6 text-gray-900">Mobile Number</label>
                     <div class="mt-2">
-                      <input type="number" id="mobilenumber" name="mobilenumber"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="number" id="mobilenumber" name="mobilenumber"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                     <button class="button button1">Generate OTP</button>
                     
@@ -182,7 +194,7 @@
                 <div class="sm:col-span-2 sm:col-start-1">
                     <label for="otp" class="block text-sm font-medium leading-6 text-gray-900">Enter OTP</label>
                     <div class="mt-2">
-                      <input type="text" name="otp" id="otp"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                      <input type="text" name="otp" id="otp"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                     </div>
                   </div>
               </div>
@@ -195,19 +207,19 @@
                     <div class="sm:col-span-4">
                         <label for="busnumber" class="block text-sm font-medium leading-6 text-gray-900">Bus Number</label>
                         <div class="mt-2">
-                        <input id="busnumber" name="busnumber" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <input id="busnumber" name="busnumber" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                         </div>
                     </div>
                     <div class= "sm:col-span-2 sm:col-start-1">
                         <label for="timings" class="block text-sm font-medium leading-6 text-gray-900">Timings</label>
                         <div class="mt-2">
-                        <input id="timing" name="timing" placeholder="  10:00PM - 09:00AM" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <input id="timing" name="timing" placeholder="  10:00PM - 09:00AM" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                         </div>
                     </div>
                     <div class="sm:col-span-2 sm:col-start-1">
                         <label for="pickuppoint" class="block text-sm font-medium leading-6 text-gray-900">Pickup point</label>
                         <div class="mt-2">
-                            <select id="pickuppoint" name="pickuppoint"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                            <select id="pickuppoint" name="pickuppoint"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" required>
                                 <option></option>
                                 <option>Aravid Eye hospital</option>
                                 <option>Krishna theatre</option>
@@ -223,7 +235,7 @@
                       <div class="sm:col-span-4">
                         <label for="droppingpoint" class="block text-sm font-medium leading-6 text-gray-900">Dropping point</label>
                         <div class="mt-2">
-                            <select id="droppingpoint" name="droppingpoint"   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                            <select id="droppingpoint" name="droppingpoint"   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" required>
                                 <option></option>
                                 <option>Aravid Eye hospital</option>
                                 <option>Krishna theatre</option>
@@ -245,7 +257,7 @@
                       <div class="mt-6 space-y-6">
                         <div class="relative flex gap-x-3">
                           <div class="flex h-6 items-center">
-                            <input id="ac" name="ac" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <input id="ac" name="facilities" value="A/C" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" >
                           </div>
                           <div class="text-sm leading-6">
                             <label for="ac" class="font-medium text-gray-900">A/C</label>
@@ -254,7 +266,7 @@
                         </div>
                         <div class="relative flex gap-x-3">
                           <div class="flex h-6 items-center">
-                            <input id="nonac" name="nonac" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <input id="nonac" name="facilities" value="Non A/C" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" >
                           </div>
                           <div class="text-sm leading-6">
                             <label for="candidates" class="font-medium text-gray-900">Non A/C</label>
@@ -263,7 +275,7 @@
                         </div>
                         <div class="relative flex gap-x-3">
                           <div class="flex h-6 items-center">
-                            <input id="sleeper" name="sleeper" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <input id="sleeper" name="facilities" value="Sleeper" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" >
                           </div>
                           <div class="text-sm leading-6">
                             <label for="sleeper" class="font-medium text-gray-900">Sleeper</label>
@@ -271,7 +283,7 @@
                         </div>
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                              <input id="nonsleeper" name="nonsleeper" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                              <input id="nonsleeper" name="facilities" value="Non-Sleeper" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" >
                             </div>
                             <div class="text-sm leading-6">
                               <label for="nonsleeper" class="font-medium text-gray-900">Non-Sleeper</label>
@@ -279,7 +291,7 @@
                           </div>
                           <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                              <input id="delux" name="delux" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                              <input id="delux" name="facilities" value="Delux" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" >
                             </div>
                             <div class="text-sm leading-6">
                               <label for="delux" class="font-medium text-gray-900">Delux</label>
@@ -287,7 +299,7 @@
                           </div>
                           <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                              <input id="nondelux" name="nondelux" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                              <input id="nondelux" name="facilities" value="Non-delux" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" >
                             </div>
                             <div class="text-sm leading-6">
                               <label for="nondelux" class="font-medium text-gray-900">Non-delux</label>
@@ -298,77 +310,198 @@
                     
                 </div><br>
                     <div class= "sm:col-span-4 sm:col-start-1">
-                        <label for="passengers" class="block text-sm font-medium leading-6 text-gray-900">Number of passengers</label>
+                        <label for="passengers" class="block text-sm font-medium leading-6 text-gray-900">Max. number of passengers</label>
                         <div class="mt-2">
-                        <input id="passengers" name="passengers" placeholder="  50" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"> 
+                        <input id="passengers" name="passengers" placeholder="   50" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" > 
                         </div>
                     </div>
                 </div>
-                
-                
-          
-              <!-- <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Notifications</h2>          
-                <div class="mt-10 space-y-10">
-                  <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">By Email</legend>
-                    <div class="mt-6 space-y-6">
-                      <div class="relative flex gap-x-3">
-                        <div class="flex h-6 items-center">
-                          <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                        </div>
-                        <div class="text-sm leading-6">
-                          <label for="comments" class="font-medium text-gray-900">Comments</label>
-                          <p class="text-gray-500">Get notified when someones posts a comment on a posting.</p>
-                        </div>
-                      </div>
-                      <div class="relative flex gap-x-3">
-                        <div class="flex h-6 items-center">
-                          <input id="candidates" name="candidates" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                        </div>
-                        <div class="text-sm leading-6">
-                          <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-                          <p class="text-gray-500">Get notified when a candidate applies for a job.</p>
-                        </div>
-                      </div>
-                      <div class="relative flex gap-x-3">
-                        <div class="flex h-6 items-center">
-                          <input id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                        </div>
-                        <div class="text-sm leading-6">
-                          <label for="offers" class="font-medium text-gray-900">Offers</label>
-                          <p class="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Push Notifications</legend>
-                    <p class="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p>
-                    <div class="mt-6 space-y-6">
-                      <div class="flex items-center gap-x-3">
-                        <input id="push-everything" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                        <label for="push-everything" class="block text-sm font-medium leading-6 text-gray-900">Everything</label>
-                      </div>
-                      <div class="flex items-center gap-x-3">
-                        <input id="push-email" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                        <label for="push-email" class="block text-sm font-medium leading-6 text-gray-900">Same as email</label>
-                      </div>
-                      <div class="flex items-center gap-x-3">
-                        <input id="push-nothing" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                        <label for="push-nothing" class="block text-sm font-medium leading-6 text-gray-900">No push notifications</label>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-              </div>
-            </div>
-          
-            <div class="mt-6 flex items-center justify-end gap-x-6">
-              <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-              <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
-            </div> -->
-          </form>
+
+                <button class="submit relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                  <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Submit                  </span>
+                  </button>             
+                <br>
+            </form>
     </section>
+     <!-- bg images-->
+     <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-8">
+      <div class="transform scale-110 -rotate-6">
+        <img src="/image/bus1.jpeg" alt="" loading="lazy">
+      </div>
+      <div class="col-start-3 transform scale-75 rotate-6 translate-x-2 translate-y-15">
+        <img src="/image/bus2.jpeg" alt="" loading="lazy">
+      </div>
+      <div class="transform scale-150 translate-y-11">
+        <img src="/image/bus3.jpeg" alt="" loading="lazy">
+      </div>
+      <div class=" transform translate-y-24">
+        <img src="/image/bus4.jpeg" alt="" loading="lazy">
+      </div>
+      <div class=" transform translate-y-24">
+        <img src="/image/bus7.jpeg" alt="" loading="lazy">
+      </div>
+      <div class="transform scale-150 translate-y-11">
+        <img src="/image/bus3.jpeg" alt="" loading="lazy">
+      </div>
+      <div class="transform scale-110 rotate-12">
+        <img src="/image/bus6.jpeg" alt="" loading="lazy">
+      </div>
+      <div class="row-start-1 col-start-2 col-span-2 transform translate-x-20 translate-y-4">
+        <img src="/image/bus5.jpeg" alt="" loading="lazy">
+      </div>
+      
+    </div>
+
+    <section class="section4">
+      <div class="cards">
+        <div class="flex bg-slate-300 mt-24 ml-64 max-w-screen-md h-28 p-8 justify-center opacity-0" id="card2">
+          <div class='text-2xl'>"Earn Best driver Award from the VioBus"</div>
+        </div>
+        <div class="flex bg-slate-300 mt-10 ml-64 max-w-screen-md h-28 p-8 justify-center opacity-0" id="card3">
+          <div class='text-2xl'>"Seasonal Bonus"</div>
+        </div>
+        <div class="flex bg-slate-300 mt-10 ml-64 max-w-screen-md h-28 p-8 justify-center opacity-0" id="card4">
+          <div class='text-2xl'>"Instant Payment"</div>
+        </div>
+        <div class="flex bg-slate-300 mt-10 mb-10 ml-64 max-w-screen-md h-28 p-8 justify-center opacity-0" id="card5">
+          <div class='text-2xl'>"Get Extra Bonus"</div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- footer -->
+    <footer>
+      <div class="link-block">
+          <div class="block1">
+              <p>vioBus is the world's largest online bus ticket booking service trusted by over 25 million happy customers globally. vioBus offers bus ticket booking through its website, iOS and Android mobile apps for all major routes.</p>
+          </div>
+          <div class="block2">
+              <h4>About VioBus</h4>
+              <ul>
+                  <li>About us</li>
+                  <li>Contact us</li>
+                  <li>Offers</li>
+                  <li>Values</li>
+              </ul>
+          </div>
+          <div class="block3">
+              <h4>Global sites</h4>
+              <ul>
+                  <li>India</li>
+                  <li>Singapore</li>
+                  <li>Malaysia</li>
+                  <li>Indonesia</li>
+                  <li>Peru</li>
+                  <li>Colombia</li>
+                  <li>Cambodia</li>
+                  <li>Vietnam</li>
+              </ul>
+          </div>
+          <div class="block4">
+              <h4>Our Partners</h4>
+              <ul>
+                  <li>Giyu Travels</li>
+                  <li>Leonardo Hotels</li>
+              </ul>
+          </div>
+      </div>
+      <div class="line"></div>
+      <div class="block5">
+          <h6>Ⓒ 2024 Redbus India Pvt Ltd. All rights reserved</h6>
+      </div>
+      <div class="social-media">
+          <ul class="ul-images">
+              <li><img src="image/instagram.png" alt=""></li>
+              <li><img src="image/facebook.png" alt=""></li>
+              <li><img src="image/linkedin.png" alt=""></li>
+              <li><img src="image/twitter.svg" alt=""></li>
+          </ul>
+      </div>
+  </footer>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeIn');
+            entry.target.classList.remove('opacity-0');
+            observer.unobserve(entry.target); // Optional: stop observing after animation
+          }
+        });
+      }, observerOptions);
+
+      const elements = document.querySelectorAll('.cards > div');
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains('sec3-content')) {
+              entry.target.classList.add('animate-slideInRight');
+              entry.target.classList.remove('opacity-0');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const elements = document.querySelectorAll('.sec3-content');
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+
+    const form = document.querySelector('form');
+    submit.addEventListener('submit',async(e) => {
+      e.preventDefault();
+      // const name = form.name.value;
+      // const about = form.about.value;
+      // const file_upload = form.file_upload.value;
+      // const first_name = form.first_name.value;
+      // const last_name = form.last_name.value;
+      // const email = form.email.value;
+      // const country = form.country.value;
+      // const street = form.street.value;
+      // const city = form.city.value;
+      // const state = form.city.value;
+
+      const formData = new FormData(form);
+      const formObject = object.fromEntries(formData.entries());
+      console.log(formObject);
+      try{
+        const res = await fetch('/driverrole',{
+          method:"POST",
+          body:JSON.stringify({formObject}),
+          headers:{'content-Type':'application/json'}
+        });
+      }
+      catch(err){
+        console.log('while sending data',err)
+      }
+    })
+
+  </script>
+
 </body>
 </html>
