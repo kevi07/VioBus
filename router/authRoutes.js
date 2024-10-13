@@ -12,6 +12,7 @@ router.get('/driverrole',authController.driverrole_get);
 // router.post('/driverrole',authController.driverrole_post);
 // router.post('/upload-driver', upload.single('file_upload'), driverController.driverrole_post);
 router.post('/driverrole', driverController, authController.driverrole_post);
+router.get('/search',authController.busses_get);
 
 
 

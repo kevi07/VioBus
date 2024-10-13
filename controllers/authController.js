@@ -26,3 +26,6 @@ module.exports.driverrole_post = (req,res) => {
         console.log(err);
     })
 }
+module.exports.busses_get = (req,res) => {
+    res.render('buses')
+}
