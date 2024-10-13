@@ -26,6 +26,19 @@ module.exports.driverrole_post = (req,res) => {
         console.log(err);
     })
 }
-module.exports.busses_get = (req,res) => {
-    res.render('buses')
+module.exports.busses_get = async (req,res) => {
+    const {fromvalue,tovalue,date} = req.query;
+    try{
+        const result = await Driver.bus({fromvalue,tovalue,date});
+        if(result){
+            res.render('buses',{result});
+        }
+        else{
+            res.status(404).send('No buses found');
+        }
+    }
+    catch(err){
+        console.error(err);
+        res.status(500).send('Server error');
+    }
 }

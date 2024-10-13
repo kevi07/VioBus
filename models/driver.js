@@ -34,5 +34,13 @@ const driverSchema = new schema({
     passangers:{type:Number}
 })
 
+
+driverSchema.statics.bus = async function(fromvalue, tovalue, date){
+    const res = await this.findOne({fromvalue});
+    if(res){
+        console.log('outputed')
+    }
+}
+
 const Driver = mongoose.model('Driver',driverSchema);
 module.exports = Driver;
